@@ -1,0 +1,436 @@
+{
+  "userCurrency": {
+    "group": "Setup",
+    "type": "text",
+    "label": "Currency Symbol:",
+    "value": "$"
+  },
+  "userCurrencyPosition": {
+    "group": "Setup",
+    "type": "dropdown",
+    "label": "User currency position:",
+    "value": "left",
+    "options": {
+      "left": "Left of amount",
+      "right": "Right of amount"
+    }
+  },
+  "chatDirection": {
+    "group": "Setup",
+    "type": "dropdown",
+    "label": "Chat direction:",
+    "value": "column",
+    "options": {
+      "column": "Ascending",
+      "column-reverse": "Descending"
+    }
+  },
+  "msgGap": {
+    "group": "Setup",
+    "type": "number",
+    "label": "Message gap: (px)",
+    "value": 30,
+    "min": 0,
+    "step": 1
+  },
+  "msgStretch": {
+    "group": "Setup",
+    "type": "dropdown",
+    "label": "Stretch message background:",
+    "value": "fit-content",
+    "options": {
+      "100%": "To 100% of widget width",
+      "fit-content": "To fit message width"
+    }
+  },
+  "msgLimit": {
+    "group": "Setup",
+    "type": "number",
+    "label": "# of messages visible simultaneously:",
+    "value": 10,
+    "min": 0,
+    "max": 128,
+    "step": 1
+  },
+  "hideAfter": {
+    "group": "Setup",
+    "type": "number",
+    "label": "Hide after #s (999 to disable)",
+    "value": 999
+  },
+  "ignoredUsers": {
+    "group": "Setup",
+    "type": "text",
+    "label": "Ignored users: (separated by comma)",
+    "value": "some-user, some-bot"
+  },
+  "showCommands": {
+    "group": "Setup",
+    "type": "checkbox",
+    "value": true,
+    "label": "Show messages starting with \"!\""
+  },
+  "displayPronouns": {
+    "group": "Setup",
+    "type": "checkbox",
+    "value": false,
+    "label": "Show pronouns"
+  },
+  "animateDuration": {
+    "group": "Setup",
+    "type": "number",
+    "label": "Animation duration: (ms)",
+    "value": 1000,
+    "min": 0,
+    "step": 100
+  },
+  "animationIn": {
+    "group": "Setup",
+    "type": "dropdown",
+    "label": "Animation in:",
+    "value": "fadeIn",
+    "options": {
+      "none": "None",
+      "backInDown": "Back in - Down",
+      "backInLeft": "Back in - Left",
+      "backInRight": "Back in - Right",
+      "backInUp": "Back in - Up",
+      "bounceIn": "Bounce in",
+      "bounceInDown": "Bounce in - Down",
+      "bounceInLeft": "Bounce in - Left",
+      "bounceInRight": "Bounce in - Right",
+      "bounceInUp": "Bounce in - Up",
+      "fadeIn": "Fade in",
+      "fadeInDown": "Fade in - Down",
+      "fadeInDownBig": "Fade in - Down big",
+      "fadeInLeft": "Fade in - Left",
+      "fadeInLeftBig": "Fade in - Left big",
+      "fadeInRight": "Fade in - Right",
+      "fadeInRightBig": "Fade in - Right big",
+      "fadeInUp": "Fade in - Up",
+      "fadeInUpBig": "Fade in - Up big",
+      "fadeInTopLeft": "Fade in - Top left",
+      "fadeInTopRight": "Fade in - Top right",
+      "fadeInBottomLeft": "Fade in - Bottom left",
+      "fadeInBottomRight": "Fade in - Bottom right",
+      "flip": "Flip",
+      "flipInX": "Flip in X",
+      "flipInY": "Flip in Y",
+      "lightSpeedInRight": "Lightspeed in - Right",
+      "lightSpeedInLeft": "Lightspeed in - Left",
+      "rotateIn": "Rotate in",
+      "rotateInDownLeft": "Rotate in - Left",
+      "rotateInDownRight": "Rotate in - Right",
+      "rotateInUpLeft": "Rotate in - Up left",
+      "rotateInUpRight": "Rotate in - Up right",
+      "jackInTheBox": "Jack in the box",
+      "rollIn": "Roll in",
+      "zoomIn": "Zoom in",
+      "zoomInDown": "Zoom in - Down",
+      "zoomInLeft": "Zoom in - Left",
+      "zoomInRight": "Zoom in - Right",
+      "zoomInUp": "Zoom in - Up",
+      "slideInDown": "Slide in - Down",
+      "slideInLeft": "Slide in - Left",
+      "slideInRight": "Slide in - Right",
+      "slideInUp": "Slide in - Up"
+    }
+  },
+  "animationOut": {
+    "group": "Setup",
+    "type": "dropdown",
+    "label": "Animation out:",
+    "value": "fadeOut",
+    "options": {
+      "none": "None",
+      "backOutDown": "Back out - Down",
+      "backOutLeft": "Back out - Left",
+      "backOutRight": "Back out - Right",
+      "backOutUp": "Back out - Up",
+      "bounceOut": "Bounce out",
+      "bounceOutDown": "Bounce out - Down",
+      "bounceOutLeft": "Bounce out - Left",
+      "bounceOutRight": "Bounce out - Right",
+      "bounceOutUp": "Bounce out - Up",
+      "fadeOut": "Fade out",
+      "fadeOutDown": "Fade out - Down",
+      "fadeOutDownBig": "Fade out - Down big",
+      "fadeOutLeft": "Fade out - Left",
+      "fadeOutLeftBig": "Fade out - Left big",
+      "fadeOutRight": "Fade out - Right",
+      "fadeOutRightBig": "Fade out - Right big",
+      "fadeOutUp": "Fade out - Up",
+      "fadeOutUpBig": "Fade out - Up big",
+      "fadeOutTopLeft": "Fade out - Top left",
+      "fadeOutTopRight": "Fade out - Top right",
+      "fadeOutBottomLeft": "Fade out - Bottom left",
+      "fadeOutBottomRight": "Fade out - Bottom right",
+      "flipOutX": "Flip out X",
+      "flipOutY": "Fade out Y",
+      "lightSpeedOutRight": "Lightspeed out - Right",
+      "lightSpeedOutLeft": "Lightspeed out - Left",
+      "rotateOut": "Rotate out",
+      "rotateOutDownLeft": "Rotate out - Left",
+      "rotateOutDownRight": "Rotate out - Right",
+      "rotateOutUpLeft": "Rotate out - Up left",
+      "rotateOutUpRight": "Rotate out - Up right",
+      "hinge": "Hinge",
+      "rollOut": "Roll out",
+      "zoomOut": "Zoom out",
+      "zoomOutDown": "Zoom out - Down",
+      "zoomOutLeft": "Zoom out - Left",
+      "zoomOutRight": "Zoom out - Right",
+      "zoomOutUp": "Zoom out - Up",
+      "slideOutDown": "Slide out - Down",
+      "slideOutLeft": "Slide out - Left",
+      "slideOutRight": "Slide out - Right",
+      "slideOutUp": "Slide out - Up"
+    }
+  },
+  "autoDelete": {
+    "group": "Auto Delete Messages",
+    "type": "checkbox",
+    "value": false,
+    "label": "Delete messages before they get cut off"
+  },
+  "autoDeleteDistance": {
+    "group": "Auto Delete Messages",
+    "type": "number",
+    "label": "Auto delete distance: (px)",
+    "value": 100,
+    "min": 0,
+    "step": 1
+  },
+  "fontName": {
+    "group": "Typography",
+    "type": "text",
+    "label": "Font name: (fonts.google.com)",
+    "value": "Nunito"
+  },
+  "fontSize": {
+    "group": "Typography",
+    "type": "number",
+    "label": "Font size: (px)",
+    "value": 16,
+    "min": 0,
+    "max": 256,
+    "step": 1
+  },
+  "emoteSize": {
+    "group": "Typography",
+    "type": "number",
+    "label": "Emote size: (px)",
+    "value": 24,
+    "min": 0,
+    "max": 256,
+    "step": 1
+  },
+  "emoteOnlySize": {
+    "group": "Typography",
+    "type": "number",
+    "label": "Emote only size: (px)",
+    "value": 48,
+    "min": 0,
+    "max": 256,
+    "step": 1
+  },
+  "displayBadges": {
+    "group": "Badges",
+    "type": "checkbox",
+    "value": true,
+    "label": "Show badges next to usernames"
+  },
+  "badgeSize": {
+    "group": "Badges",
+    "type": "number",
+    "label": "Badge size: (px)",
+    "value": 16,
+    "step": 1
+  },
+  "badgeGap": {
+    "group": "Badges",
+    "type": "number",
+    "label": "Gap between badges: (px)",
+    "value": 5,
+    "step": 1
+  },
+  "colorBg": {
+    "group": "Customization",
+    "type": "colorpicker",
+    "label": "Background color",
+    "value": "#f98b49"
+  },
+  "colorBgAlt": {
+    "group": "Customization",
+    "type": "colorpicker",
+    "label": "Background alt color",
+    "value": "#ffb67b"
+  },
+  "colorBorder": {
+    "group": "Customization",
+    "type": "colorpicker",
+    "label": "Border color",
+    "value": "#8b371a"
+  },
+  "colorText": {
+    "group": "Customization",
+    "type": "colorpicker",
+    "label": "Text color",
+    "value": "#8b371a"
+  },
+  "colorTextAlt": {
+    "group": "Customization",
+    "type": "colorpicker",
+    "label": "Text alt color",
+    "value": "#b05434"
+  },
+  "colorAlert": {
+    "group": "Customization",
+    "type": "colorpicker",
+    "label": "Alert accent color",
+    "value": "#d5763c"
+  },
+  "displayFollows": {
+    "type": "checkbox",
+    "label": "Show follows",
+    "value": false,
+    "group": "Alerts"
+  },
+  "displaySubs": {
+    "type": "checkbox",
+    "label": "Show subscriptions",
+    "value": true,
+    "group": "Alerts"
+  },
+  "displayResubs": {
+    "type": "checkbox",
+    "label": "Show Resubscriptions",
+    "value": true,
+    "group": "Alerts"
+  },
+  "displayGifted": {
+    "type": "checkbox",
+    "label": "Show gifted subscriptions (Direct)",
+    "value": true,
+    "group": "Alerts"
+  },
+  "displayBulkGifted": {
+    "type": "checkbox",
+    "label": "Show gifted subscriptions (Bulk)",
+    "value": true,
+    "group": "Alerts"
+  },
+  "displayDonations": {
+    "type": "checkbox",
+    "label": "Show donations",
+    "value": true,
+    "group": "Alerts"
+  },
+  "minDonationAmount": {
+    "group": "Alerts",
+    "type": "number",
+    "label": "Minimum donation amount to display",
+    "value": 1,
+    "min": 0,
+    "step": 1
+  },
+  "displayCheers": {
+    "type": "checkbox",
+    "label": "Show cheers (Bits)",
+    "value": true,
+    "group": "Alerts"
+  },
+  "minCheerAmount": {
+    "group": "Alerts",
+    "type": "number",
+    "label": "Minimum cheer amount to display",
+    "value": 100,
+    "min": 0,
+    "step": 1
+  },
+  "displayRaids": {
+    "type": "checkbox",
+    "label": "Show raids",
+    "value": true,
+    "group": "Alerts"
+  },
+  "alertSound": {
+    "type": "sound-input",
+    "label": "Alert sound",
+    "value": "https://cdn.streamelements.com/static/alertbox/default.ogg",
+    "group": "Sound"
+  },
+  "alertSoundVolume": {
+    "type": "slider",
+    "label": "Alert sound volume",
+    "value": 0.0,
+    "min": 0.0,
+    "max": 1.0,
+    "step": 0.05,
+    "group": "Sound"
+  },
+  "regularMessage": {
+    "group": "Test Messages",
+    "type": "button",
+    "label": "Regular",
+    "value": "Regular Message"
+  },
+  "subscriberMessage": {
+    "group": "Test Messages",
+    "type": "button",
+    "label": "Subscriber",
+    "value": "Subscriber Message"
+  },
+  "vipMessage": {
+    "group": "Test Messages",
+    "type": "button",
+    "label": "VIP",
+    "value": "VIP Message"
+  },
+  "moderatorMessage": {
+    "group": "Test Messages",
+    "type": "button",
+    "label": "Moderator",
+    "value": "Moderator Message"
+  },
+  "broadcasterMessage": {
+    "group": "Test Messages",
+    "type": "button",
+    "label": "Broadcaster",
+    "value": "Broadcaster Message"
+  },
+  "emoteOnlyMessage": {
+    "group": "Test Messages",
+    "type": "button",
+    "label": "Emote Only",
+    "value": "Emote Only Message"
+  },
+  "replyMessage": {
+    "group": "Test Messages",
+    "type": "button",
+    "label": "Reply",
+    "value": "Reply Message"
+  },
+  "checkForUpdatesOnWidgetLoad": {
+    "type": "checkbox",
+    "value": true,
+    "label": "Check for updates 'onWidgetLoad'"
+  },
+  "checkForUpdates": {
+    "type": "button",
+    "label": "Check for updates",
+    "value": "checkForUpdates"
+  },
+  "widgetName": {
+    "type": "hidden",
+    "value": "Poomkin Chat"
+  },
+  "widgetAuthor": {
+    "type": "hidden",
+    "value": "Redo"
+  },
+  "widgetVersion": {
+    "type": "hidden",
+    "value": "1.0"
+  }
+}

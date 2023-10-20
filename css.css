@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family={{fontName}}:wght@100;200;300;400;500;600;700;800;900;1000&display=swap');
+
+/* Variables */
+
+:root{
+    --font-name: {{fontName}};
+  	--font-size: {{fontSize}}px;
+    --chat-direction: {{chatDirection}};
+    --message-width: {{msgStretch}};
+    --msg-gap: {{msgGap}}px;
+    --emote-size: {{emoteSize}}px;
+    --emote-only-size: {{emoteOnlySize}}px;
+    --badge-size: {{badgeSize}}px;
+    --badge-gap: {{badgeGap}}px;
+    --animate-duration: {{animateDuration}}ms!important;
+
+	--color-bg: {{colorBg}};
+    --color-bg-alt: {{colorBgAlt}};
+    --color-border: {{colorBorder}};
+    --color-text: {{colorText}};
+    --color-text-alt: {{colorTextAlt}};
+    --color-alert: {{colorAlert}};
+}
+
+/* Main Setup */
+
+body{
+    margin: 0;
+    padding: 0;
+  	font-family: var(--font-name), sans-serif;
+  	font-size: var(--font-size);
+}
+
+p{
+    margin: 0;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.hide{
+	display: none!important;
+}
+
+.chat-message{
+    position: relative;
+    width: 100%;
+}
+
+.main-container{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    color: #fff;
+    font-weight: 1000;
+    display: flex;
+  	justify-content: flex-end;
+  	flex-direction: var(--chat-direction);
+  	gap: var(--msg-gap);
+  	padding: 40px;
+}
+
+.message-box, .alert-box{
+  background: var(--color-bg);
+  color: var(--color-text);
+  border-radius: 1.25em;
+  border: var(--color-border) 0.125rem solid;
+  padding: 0.625em 0;
+  width: var(--message-width);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.625em;
+
+  padding-right: 1em;
+  box-sizing: content-box;
+  position: relative;
+}
+
+.emote{
+  vertical-align: middle;
+  background-repeat:no-repeat;
+  background-size: contain;
+  height: var(--emote-size);
+}
+
+.emote-only > img{
+  height: var(--emote-only-size);
+  vertical-align: middle;
+}
+
+.reply{
+    position: relative;
+  	z-index: 2;
+  
+    background: var(--color-1);
+    color: var(--color-msg);
+  	font-size: .75em;
+  	font-weight: 900;
+    padding: .125em 1em;
+    border-radius: 1em;
+  	width: fit-content;
+  
+  	display: flex;
+  	align-items: center;
+  	margin-top: -1em;
+	transform: translateY(50%);
+}
+
+.mention{
+	display: inline-flex;
+  	padding: .125em .5em;
+    border-radius: 1em;
+  	background: var(--color-1);
+    color: var(--color-msg);
+  	font-size: .75em;
+  	transform: translateY(-0.125em);
+}
+
+.badges{
+    display: flex;
+    height: var(--badge-size);
+    gap: var(--badge-gap);
+    align-items: center;
+}
+
+.badge{
+    height: var(--badge-size);
+    vertical-align: middle;
+}
+
+.separator{
+  height: 0.25em;
+  aspect-ratio: 1/1;
+  background: var(--color-bg-alt);
+  border: var(--color-border) 0.125rem solid;
+  border-radius: 1rem;
+}
+
+.update-notif{
+    width: 100%;
+    border-radius: .5em;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+  	text-align: center;
+}
+
+.success{
+	background: var(--bg);
+  	color: var(--text);
+}
+
+.warning{
+	background: #ed1b53;
+  color: #fff;
+}
+
+/* Chat */
+
+.user-container, .message{
+  position: relative;
+  z-index: 1;
+}
+
+.user-container{
+  font-size: 0.75em;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 0.3125em;
+}
+
+.user-container{
+  transform: translateX(-0.625rem);
+}
+
+
+.username, .badges{
+  background: var(--color-bg-alt);
+  padding: 0.0625rem 0.75rem;
+  border-radius: 1rem;
+  border: var(--color-border) 0.125rem solid;
+  color: var(--color-text-alt);
+}
+
+.badges{
+  margin-left: auto;
+}
+
+.message{
+  margin-left: 1.5625em;
+}
+
+.message-details, .message-details > *{
+  position: absolute;
+}
+
+.message-details{
+  width: 100%;
+  height: 100%;
+  border-radius: 1.15em;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+}
+
+.side{
+  left: -0.125em;
+  top: 0;
+
+  width: 0.625em;
+  height: 100%;
+  background: var(--color-bg-alt);
+  border: var(--color-border) 0.125em solid;
+}
+
+.web{
+  right: 0;
+  bottom: 0;
+  transform: translate(25%, 45%);
+  animation: web 500ms ease-in-out 0s 1;
+}
+
+@keyframes web {
+  from{
+    opacity: 0;
+    transform: translate(25%, 55%) rotate(20deg);
+  }
+}
+
+.user-container > :nth-child(1), .user-container > :nth-child(2), .user-container > :nth-child(3), .user-container > :nth-child(4){
+  animation: reveal 500ms ease-out 0s 1 forwards;
+  opacity: 0;
+}
+
+.user-container > :nth-child(2){
+  animation-delay: 150ms;
+}
+
+.user-container > :nth-child(3){
+  animation-delay: 300ms;
+}
+
+.user-container > :nth-child(4){
+  animation-delay: 450ms;
+}
+
+.message{
+  animation: msgReveal 500ms ease-out 0s 1 forwards;
+}
+
+@keyframes reveal {
+  from{
+    transform: translateX(-0.625rem);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0rem);
+    opacity: 1;
+  }
+}
+
+@keyframes msgReveal {
+  from{
+    transform: translateY(-0.625rem);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+
+.pumpkin{
+  top: 0;
+  right: 20%;
+  transform-origin: bottom center;
+  transform: translateY(-80%);
+  animation: bob 1s ease-in-out 0s infinite
+}
+
+.pumpkin-face{
+  top: 0.8125em;
+  left: 0.375em;
+  animation: lookAround 20s ease-in-out 0s infinite;
+}
+
+.pumpkin-eyes{
+  top: 0;
+  left: 0;
+  animation: blink 4s ease-in-out 0s infinite;
+}
+
+.pumpkin-mouth{
+  top: 0.5625em;
+  left: 0.25em;
+}
+
+@keyframes blink {
+  5%{
+    transform: scaleY(.1);
+  }
+  10%{
+    transform: scaleY(1);
+  }
+}
+
+@keyframes bob {
+  50%{
+    transform: translateY(-80%) scaleY(.95);
+  }
+}
+
+@keyframes lookAround {
+  0%, 4%, 23%{
+    top: 0.8125em;
+    left: 0.375em;
+  }
+  5%, 9%{
+    top: 0.75em;
+    left: 0.625em;
+  }
+  10%, 14%{
+    top: 0.875em;
+    left: 0.9375em;
+  }
+  15%, 19%, 22%{
+    top: 1.0625em;
+  }
+}
+
+/* Alerts */
+
+.alert-box{
+  height: 3.75em;
+
+  display: flex;
+  justify-content: center;
+}
+
+.alert-content > *{
+  display: inline;
+}
+
+.alert-content{
+  position: relative;
+  z-index: 1;
+  transform: translateX(-0.625em);
+  opacity: 0;
+  animation: alertReveal 500ms ease-out 0s 1 forwards;
+}
+
+@keyframes alertReveal {
+  from{
+    transform: translateX(-1.25rem);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(-0.625rem);
+    opacity: 1;
+  }
+}
+
+.alert-content > .username{
+  font-size: 0.75em;
+}
+
+.alert-highlight{
+  color: var(--color-bg-alt);
+  text-shadow: var(--color-border) 0.125em 0em 0em, var(--color-border) 0.109698125em 0.0599281875em 0em, var(--color-border) 0.0675375em 0.10518375em 0em, var(--color-border) 0.008842125em 0.124686875em 0em, var(--color-border) -0.052018375em 0.113661875em 0em, var(--color-border) -0.100143125em 0.07480875em 0em, var(--color-border) -0.12374875em 0.01764em 0em, var(--color-border) -0.117056875em -0.043847875em 0em, var(--color-border) -0.081705625em -0.0946em 0em, var(--color-border) -0.0263495em -0.12219125em 0em, var(--color-border) 0.03545775em -0.119865625em 0em, var(--color-border) 0.08858375em -0.0881925em 0em, var(--color-border) 0.12002125em -0.0349269375em 0em;
+
+}
+
+.alert-details{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 1.15em;
+  overflow: hidden;
+}
+
+.alert-details > *{
+  position: absolute;
+}
+
+.alert-details > :nth-child(1), .alert-details > :nth-child(2){
+  transform: translate(-50%, -50%);
+  left: 0;
+  top: 50%;
+  animation: alertRotate 30s linear 0s infinite;
+}
+
+@keyframes alertRotate {
+  to{
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.alert-side{
+  top: -7.75em;
+  right: -2.5em;
+  animation: alertSide 1s linear 0s infinite;
+}
+
+@keyframes alertSide {
+  to{
+    top: -6.25em;
+  }
+}
+
+.alert-pumpkin{
+  position: absolute;
+  top: 0;
+  left: 1.25em;
+  transform-origin: bottom center;
+  transform: translateY(-80%);
+  animation: bob 1s ease-in-out 0s infinite
+}
+
+.alert-pumpkin-face{
+  top: 16px;
+  left: 14px;
+}
+
+.alert-pumpkin-eye-1{
+  top: 0;
+  left: 0;
+  animation: eyeRotate 3s linear 0s infinite;
+}
+
+.alert-pumpkin-eye-2{
+  top: 0;
+  left: 12px;
+  animation: eyeRotate 3s linear 0s infinite;
+}
+
+@keyframes eyeRotate {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.alert-pumpkin-mouth{
+  top: 9px;
+  left: 8px;
+  animation: alertMouth 10s linear 0s infinite;
+}
+
+@keyframes alertMouth {
+  10%{
+    transform: scaleY(1.5);
+  }
+  20%{
+    transform: scaleY(1);
+  }
+}
