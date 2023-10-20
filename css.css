@@ -148,13 +148,13 @@ p{
 }
 
 .success{
-	background: var(--bg);
-  	color: var(--text);
+	background: var(--color-bg);
+  	color: var(--color-text);
 }
 
 .warning{
 	background: #ed1b53;
-  color: #fff;
+  	color: #fff;
 }
 
 /* Chat */
