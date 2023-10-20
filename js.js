@@ -384,7 +384,7 @@ function addMessage(replyTo, replyBody, replyStyle, badges, username, pronoun, p
     }
 }
 
-function addAlert(alertContent, alertSubtext, sound, soundVolume){
+function addAlert(alertContent, sound, soundVolume){
     totalMessages += 1;
   
     const regular = $.parseHTML(`
