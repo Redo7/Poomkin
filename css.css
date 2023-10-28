@@ -7,6 +7,7 @@
   	--font-size: {{fontSize}}px;
     --chat-direction: {{chatDirection}};
     --message-width: {{msgStretch}};
+  	--alert-width: {{alertMsgStretch}};
     --msg-gap: {{msgGap}}px;
     --emote-size: {{emoteSize}}px;
     --emote-only-size: {{emoteOnlySize}}px;
@@ -24,11 +25,19 @@
 
 /* Main Setup */
 
+.animate__{{animationIn}}{
+  	animation-delay: {{smoothScrollDuration}}ms;
+}
+
 body{
     margin: 0;
     padding: 0;
   	font-family: var(--font-name), sans-serif;
-  	font-size: var(--font-size);
+  	
+}
+
+html{
+	font-size: var(--font-size);
 }
 
 p{
@@ -50,7 +59,6 @@ p{
 
 .main-container{
     width: 100%;
-    height: 100%;
     box-sizing: border-box;
     color: #fff;
     font-weight: 1000;
@@ -59,13 +67,15 @@ p{
   	flex-direction: var(--chat-direction);
   	gap: var(--msg-gap);
   	padding: 40px;
+  
+  	position: absolute;
 }
 
 .message-box, .alert-box{
   background: var(--color-bg);
   color: var(--color-text);
   border-radius: 1.25em;
-  border: var(--color-border) 0.125rem solid;
+  border: var(--color-border) 0.125em solid;
   padding: 0.625em 0;
   width: var(--message-width);
 
@@ -174,7 +184,7 @@ p{
 }
 
 .user-container{
-  transform: translateX(-0.625rem);
+  transform: translateX(-0.625em);
 }
 
 
@@ -336,6 +346,8 @@ p{
 
 .alert-box{
   height: 3.75em;
+  width: var(--alert-width);
+  padding-right: 0;
 
   display: flex;
   justify-content: center;
@@ -401,7 +413,7 @@ p{
 
 .alert-side{
   top: -7.75em;
-  right: -2.5em;
+  left: 90%;
   animation: alertSide 1s linear 0s infinite;
 }
 
@@ -421,8 +433,8 @@ p{
 }
 
 .alert-pumpkin-face{
-  top: 16px;
-  left: 14px;
+  top: 1em;
+  left: 0.875em;
 }
 
 .alert-pumpkin-eye-1{
@@ -433,7 +445,7 @@ p{
 
 .alert-pumpkin-eye-2{
   top: 0;
-  left: 12px;
+  left: 0.75em;
   animation: eyeRotate 3s linear 0s infinite;
 }
 
@@ -444,8 +456,8 @@ p{
 }
 
 .alert-pumpkin-mouth{
-  top: 9px;
-  left: 8px;
+  top: 0.5625em;
+  left: 0.5em;
   animation: alertMouth 10s linear 0s infinite;
 }
 

@@ -43,6 +43,16 @@
       "fit-content": "To fit message width"
     }
   },
+  "alertMsgStretch": {
+    "group": "Setup",
+    "type": "dropdown",
+    "label": "Stretch alert background:",
+    "value": "100%",
+    "options": {
+      "100%": "To 100% of widget width",
+      "fit-content": "To fit message width"
+    }
+  },
   "msgLimit": {
     "group": "Setup",
     "type": "number",
@@ -58,6 +68,14 @@
     "label": "Hide after #s (999 to disable)",
     "value": 999
   },
+  "smoothScrollDuration": {
+        "group": "Setup",
+        "type": "number",
+        "label": "Smooth scroll duration:(ms, 0 to disable)",
+        "value": 150,
+        "min": 0,
+        "step": 10
+    },
   "ignoredUsers": {
     "group": "Setup",
     "type": "text",
@@ -431,6 +449,6 @@
   },
   "widgetVersion": {
     "type": "hidden",
-    "value": "1.0"
+    "value": "1.1"
   }
 }
